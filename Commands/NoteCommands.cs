@@ -88,6 +88,8 @@ When modifying a note, leaving the content field empty will delete the note auto
             components.Add(new DiscordTextDisplayComponent(@"## /note show
 With `/note show` you can publish your note to the current channel. It will then be sent to the channel, and everyone can see it.
 -# Note: You might need the ""Use Application Commands"" permission to do that."));
+
+            await ctx.EditResponseAsync(new DiscordMessageBuilder().EnableV2Components().AddContainerComponent(new (components, false, DiscordColor.Purple)));
         }
     }
 }
